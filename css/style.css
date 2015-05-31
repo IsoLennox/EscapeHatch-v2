@@ -1,0 +1,232 @@
+body{ 
+    background: #eee;
+    margin: 0;
+    font-size: 20px;
+    font-family: Lato, sans-serif;
+}
+#full {display: block;}
+#mobile {display: none; }
+header {
+    font-size: 30px;
+    height: 20px;
+    padding: 30px;
+    background: #222;
+    color: antiquewhite;
+    margin-bottom: 50px;
+    font-family: Merriweather;
+    z-index: 9999;
+    position: fixed;
+    width: 97%;
+}
+
+header a { color: antiquewhite;}
+header a:hover { color: grey;}
+
+.min-five{position: relative; top: -5px;}   
+.left_padding {padding: 20px; float: left;}
+
+
+header form {width: 50%;}
+ 
+ .search{position: relative; top: -10px;}
+.search input[type=text]{
+    width: 80%; 
+    border-radius: 5px;
+    padding: 10px;
+}
+.h4_search input[type=text]{width: 90%;}
+
+.search input[type="submit"]{
+    font-family: FontAwesome;
+    content: "&#xf002;";
+/*    color: #666;*/
+    color: antiquewhite;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+.search input[type="submit"]:hover{color: white;}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkolivegreen;
+    color: antiquewhite;
+}
+
+input[type="submit"]{ 
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: olivedrab;
+    color: antiquewhite;
+}
+
+
+input[type="file"]:hover{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+/*
+    background-color: darkolivegreen;
+    color: antiquewhite;
+*/
+    color: black;
+}
+
+input[type="file"]{ 
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+/*    background-color: olivedrab;*/
+/*    color: antiquewhite;*/
+    color: black;
+}
+
+#new_pass input[type="password"]{
+    width: 400px;
+}
+
+a {text-decoration: none;  
+    color: #8D3014;
+}
+a:hover {color: black;}
+
+.links{cursor: pointer; clear: both;}
+ 
+
+
+#page, #tall_page {
+    margin: 0 auto;
+    width: 50%;
+    padding: 200px 20px 20px;
+    background: rgba(255,255,255,.95);
+    border-radius: 5px;
+    min-height: 600px;
+    position: relative;
+    top: -60px; 
+}
+
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+ 
+.fa-question-circle:hover {cursor: pointer;}
+
+ 
+
+ .username {font-size: 18px;}
+
+#tall_page { min-height: 800px;}
+.clear{clear:both;}
+.left { float: left;}
+.center {margin: 0 auto;}
+.right { float: right;}
+.one-third {width: 600px;} 
+
+#profile {min-height: 160px; margin-bottom: 10px;}
+#profile img, .avatar {margin-right: 10px;}
+
+.avatar, img{max-width: 150px; max-height: 150px;}
+ 
+ 
+.message{ background: #222; border-radius: 2px; color: antiquewhite; padding: 10px;}
+
+ 
+
+textarea { 
+    margin: 20px;
+    border: 2px solid #90C32E;
+}
+
+.post_container{ 
+    width: 200px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid #90C32E;
+    
+}
+
+
+ 
+
+
+
+/******************************
+        /MEDIA QUERIES
+*******************************/
+
+
+@media(max-width: 1000px) {
+
+    header { 
+    height: 70px;
+    padding: 30px;  
+    margin-bottom: 50px; 
+}
+    
+    #search_all {position: relative; top: 20px;}
+    
+}
+
+
+
+/*MOBILE DEVICES ONLY*/
+@media only screen and (max-device-width: 800px) {
+    
+ 
+    
+    body{
+        
+        font-size: 30px;
+    }
+    
+    header a { color: antiquewhite;}
+    header a:hover { color: grey;}
+    
+
+    .book-cover h1.title {
+        max-height: 100px;
+    }
+    
+    h4 {font-size: 40px; }
+    
+    #full {display: none;}
+    #mobile {display: block; }
+    
+    header {
+    font-size: 40px;
+    height: 150px;
+    padding: 30px;
+/*        color:#222;*/
+/*    background: ivory;*/
+        color:ivory;
+        background: #222;
+    margin-bottom: 50px;
+    font-family: Merriweather;
+}
+    header form {width: 70%}
+    .search input[type=text]{
+     
+        font-size: 30px;
+}
+    .username {font-size: 50px; clear: both;}
+    
+
+	}
