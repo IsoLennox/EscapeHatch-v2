@@ -22,7 +22,11 @@ header {
 header a { color: antiquewhite;}
 header a:hover { color: grey;}
 
-.min-five{position: relative; top: -5px;}   
+.min-five{position: absolute; top: 0px; left: 0px;}   
+#logo {
+    width: 20%;
+    margin: 10px;
+}
 .left_padding {padding: 20px; float: left;}
 
 
@@ -156,12 +160,73 @@ textarea {
 }
 
 .post_container{ 
-    width: 200px;
+    width: 500px;
     margin: 0 auto;
+    margin-bottom: 20px;
     padding: 30px;
     border: 2px solid #90C32E;
     
 }
+
+.post_container img {float: left; padding-right: 10px;}
+
+.thumbnail{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+.comments {
+
+      clear: both;
+
+      margin: 10px; }
+
+     .comments input[type="submit"] {
+
+        float: right; }
+
+      .comments input[type="text"] {
+
+        width: 80%;
+
+        padding: 5px;
+
+        border-radius: 8px;
+
+        font-size: 1.4em; }
+
+      .comments button {
+
+        border: none;
+
+        font-size: 2em;
+
+        background: transparent; }
+
+        .comments button:hover {
+
+          color: #17000C;
+
+          cursor: pointer; }
+
+       .comments img {
+
+        clear: both;
+
+        margin: 10px;
+
+        max-width: 80%; }
+
+.comments .fa:hover, .fa-heart:hover {
+
+      color: #7F0042;
+
+      text-shadow: 0px 0px 1px #17000C; }
+ 
 
 
  

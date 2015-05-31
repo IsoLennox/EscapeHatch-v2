@@ -128,61 +128,83 @@ function find_user_by_id($user_id) {
 }
 
 
-function find_author_by_id($author_id) {
+function check_if_contact($user_id) {
     global $connection;
 
-    $safe_author_id = mysqli_real_escape_string($connection, $author_id);
+    $safe_user_id = mysqli_real_escape_string($connection, $user_id);
 
     $query  = "SELECT * ";
-    $query .= "FROM authors ";
-    $query .= "WHERE id = {$safe_author_id} ";
+    $query .= "FROM contacts ";
+    $query .= "WHERE contact_id = {$safe_user_id} AND user_id={$_SESSION['user_id']} ";
     $query .= "LIMIT 1";
-    $author_set = mysqli_query($connection, $query);
-    confirm_query($author_set);
-    if($author = mysqli_fetch_assoc($author_set)) {
-        return $author;
+    $user_set = mysqli_query($connection, $query);
+    confirm_query($user_set);
+    if($user = mysqli_fetch_assoc($user_set)) {
+        return $user;
     } else {
         return null;
     }
 }
 
-function find_genre_by_id($genre_id) {
+function get_all_following($user_id) {
     global $connection;
 
-    $safe_genre_id = mysqli_real_escape_string($connection, $genre_id);
+    $safe_user_id = mysqli_real_escape_string($connection, $user_id);
 
-    $query  = "SELECT * ";
-    $query .= "FROM genres ";
-    $query .= "WHERE id = {$safe_genre_id} ";
-    $query .= "LIMIT 1";
-    $genre_set = mysqli_query($connection, $query);
-    confirm_query($genre_set);
-    if($genre = mysqli_fetch_assoc($genre_set)) {
-        return $genre;
-    } else {
-        return null;
-    }
+    $query  = "SELECT contact_id ";
+    $query .= "FROM contacts ";
+    $query .= "WHERE user_id={$user_id} ";
+    $user_set = mysqli_query($connection, $query);
+    confirm_query($user_set);
+     if($user_set){
+        $users=array();
+        foreach($user_set as $user){
+            array_push($users, $user);
+        }
+        return $users;
+    }else{ return null; }
 }
 
 
 
-function find_books_by_author($author_id) {
+function get_all_followers($user_id) {
     global $connection;
 
-    $safe_author_id = mysqli_real_escape_string($connection, $author_id);
+    $safe_user_id = mysqli_real_escape_string($connection, $user_id);
 
-    $query  = "SELECT * ";
-    $query .= "FROM authors_books ";
-    $query .= "WHERE author_id = {$safe_author_id} ";
-    $author_set = mysqli_query($connection, $query);
-    confirm_query($author_set);
-    if($author = mysqli_fetch_assoc($author_set)) {
-        return $author;
-    } else {
-        return null;
-    }
+    $query  = "SELECT user_id ";
+    $query .= "FROM contacts ";
+    $query .= "WHERE contact_id={$user_id} ";
+    $user_set = mysqli_query($connection, $query);
+    confirm_query($user_set);
+    if($user_set){
+        $users=array();
+        foreach($user_set as $user){
+            array_push($users, $user);
+        }
+        return $users;
+    }else{ return null; }
 }
 
+//
+//function user_avatar($user_id) {
+//    global $connection;
+// 
+//    $query  = "SELECT * ";
+//    $query .= "FROM users ";
+//    $query .= "WHERE user_id = '{$user_id}' ";
+//    $query .= "LIMIT 1";
+//    $user_set = mysqli_query($connection, $query);
+//    confirm_query($user_set);
+//    if($user = mysqli_fetch_assoc($user_set)) {
+//        return $user;
+//    } else {
+//        return null;
+//    }
+//}
+// $avatar="http://lorempixel.com/150/150/cats";
+
+ 
 
 
 function find_user_by_email($email) {

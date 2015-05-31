@@ -43,14 +43,13 @@ confirm_logged_in(); ?>
     
 <!--    FULL SITE  -->
     <header id="full">
-        <span class="left min-five"><a href="index.php">EscapeHatch</a></span>
+        <span class="left min-five"><a href="index.php"><img id="logo" src="img/logo.png" alt="EscapeHatch"></a><a title="Your Profile" href="profile.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username']; ?></a></span>
         
         
 <!--        USER ICONS -->
     <span class="right username"> 
      <a href="new_post.php"><i class="fa fa-pencil"></i> New Post</a>
-      <i class="fa fa-user"> </i> <a title="Your Profile" href="profile.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username']; ?></a> | 
-       <a title="Manage Account Settings" href="settings.php?user=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-cog"></i></a> | 
+       | <a href="index.php"><i class="fa fa-home" title="Home"></i></a> | <a href="index.php?browse"><i class="fa fa-globe" title="Explore"></i></a> | 
        <a title="Log Out" href="logout.php"><i class="fa fa-sign-out"></i></a> </span>
         
 <!--   HEADER SEARCH BAR       -->
@@ -80,8 +79,7 @@ confirm_logged_in(); ?>
  </form> 
         <a href="new_post.php"><i class="fa fa-pencil"></i> New Post</a>
 <!--        USER ICONS -->
-    <div class="center username"><a title="Your Profile" href="profile.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username']; ?></a> |
-        <a title="Manage Account Settings" href="settings.php?user=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-cog"></i></a> | 
+    <div class="center username"><a title="Your Profile" href="profile.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username']; ?></a>  | <a href="index.php"><i class="fa fa-home" title="Home"></i></a> | <a href="index.php?browse"><i class="fa fa-globe" title="Explore"></i></a> |
         <a title="Log Out" href="logout.php"><i class="fa fa-sign-out"></i></a> </div>
         
 
