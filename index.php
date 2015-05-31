@@ -4,11 +4,16 @@ if(isset($_GET['browse'])){
 
     //GET ALL POSTS EVER
 $post_query  = "SELECT * FROM posts "; 
+    $header="Exploring";
     
 }elseif(isset($_GET['this'])){
 
     //GET ALL POSTS EVER
 $post_query  = "SELECT * FROM posts WHERE id={$_GET['this']} "; 
+    
+    //GO BACK TO POST POSITION IN FEED
+     if(isset($_GET['browsing'])){$browse="?browse";}else{ $browse="";}
+    $header= "<a href=\"index.php".$browse."#".$_GET['this']."\" >&laquo; Back To All Posts</a>";
     
     
 }else{
@@ -22,17 +27,14 @@ if(!empty($following)){
             }
         }
     
+    $header="Your Feed";
+    
 }
     $post_query.="ORDER BY id DESC";
     $post_result = mysqli_query($connection, $post_query);
     if($post_result){
         
-        
-        //GO BACK TO POST POSITION IN FEED
-        if(isset($_GET['this'])){
-                if(isset($_GET['browsing'])){$browse="&browse";}else{ $browse="";}
-                   echo "<a href=\"index.php#".$_GET['this'].$browse."\" >&laquo; Back To All Posts</a>";
-        }
+         echo "<h1>$header</h1>";
         
         
         //show each result value
